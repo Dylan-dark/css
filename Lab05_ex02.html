@@ -1,0 +1,67 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<title>CSS3 and music disc effect</title>
+	<style type="text/css" media="screen">
+		.music {
+			display: block;
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			width: 576px;
+			height: 576px;
+			cursor: pointer;
+		}
+		.music:hover .cover {
+			border-radius: 0%;
+		}
+		.music:hover .song {
+			opacity: 1;
+		}
+		.music:hover .disc {
+			left: 320px;
+		}
+		.disc {
+			display: block;
+			position: relative;
+			top: 32px;
+			left: 32px;
+			animation: discSpin 20s linear infinite;
+			transition: left 2s;
+		}
+		.cover, .song, .label {
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.cover {
+			width: 576px;
+			height: 576px;
+			overflow: hidden;
+			border-radius: 50%;
+			border: 1px solid #000;
+			transition: border-radius 2s;
+		}
+		.song {
+			opacity: 0;
+			transition: opacity 2s;
+		}
+		@keyframes discSpin {
+			from { transform:rotate(0deg); }
+			to { transform:rotate(360deg); }
+		}
+	</style>
+</head>
+<body>
+	<div class="music">
+		<img class="disc" src= "music-disc.png"/>
+		<div class="cover">
+			<img class="label" src="model-talking-label.png"/>
+			<img class="song" src="model-talking-songs.png"/>
+		</div>
+    </div>
+</body>
+</html>
